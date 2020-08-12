@@ -6,3 +6,6 @@ Inspired by React.js technology
 
 2. To start the app use next command:
 ### `npm start`
+
+3. Deploy application on GitPages:
+### `npm run deploy`
