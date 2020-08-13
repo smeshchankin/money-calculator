@@ -11,12 +11,13 @@ class App extends Component {
     amount: ''
   }
 
-  addTransaction = isAdding => {
+  addTransaction = add => {
     const { description, amount } = this.state;
     const transaction = {
       id: `mc${(+new Date()).toString(16)}`,
       description: description,
-      amount: (isAdding ? amount : -amount)
+      amount,
+      add
     };
 
     const transactions = [...this.state.transactions, transaction];
@@ -46,7 +47,7 @@ class App extends Component {
         <main>
           <div className="container">
               <Total />
-              <History />
+              <History transactions={this.state.transactions} />
               <Operation description={this.state.description} amount={this.state.amount}
                 addTransaction={this.addTransaction} addDescription={this.addDescription} addAmount={this.addAmount} />
           </div>
