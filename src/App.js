@@ -5,6 +5,32 @@ import Operation from './components/operation/Operation';
 
 class App extends Component {
 
+  state = {
+    transactions: [],
+    description: '',
+    amount: ''
+  }
+
+  addTransaction = isAdding => {
+    const { description, amount } = this.state;
+    const transaction = {
+      id: `mc${(+new Date()).toString(16)}`,
+      description: description,
+      amount: (isAdding ? amount : -amount)
+    };
+
+    const transactions = [...this.state.transactions, transaction];
+    this.setState({ transactions });
+  }
+
+  addDescription = event => {
+    this.setState({ description: event.target.value });
+  }
+
+  addAmount = event => {
+    this.setState({ amount: event.target.value });
+  }
+
   render() {
     return (
       <>
@@ -17,7 +43,7 @@ class App extends Component {
           <div className="container">
               <Total />
               <History />
-              <Operation />
+              <Operation addTransaction={this.addTransaction} addDescription={this.addDescription} addAmount={this.addAmount} />
           </div>
         </main>
       </>
