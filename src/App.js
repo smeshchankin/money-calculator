@@ -20,7 +20,11 @@ class App extends Component {
     };
 
     const transactions = [...this.state.transactions, transaction];
-    this.setState({ transactions });
+    this.setState({
+      transactions,
+      description: '',
+      amount: ''
+    });
   }
 
   addDescription = event => {
@@ -43,7 +47,8 @@ class App extends Component {
           <div className="container">
               <Total />
               <History />
-              <Operation addTransaction={this.addTransaction} addDescription={this.addDescription} addAmount={this.addAmount} />
+              <Operation description={this.state.description} amount={this.state.amount}
+                addTransaction={this.addTransaction} addDescription={this.addDescription} addAmount={this.addAmount} />
           </div>
         </main>
       </>
