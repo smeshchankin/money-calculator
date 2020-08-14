@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e24a6ced84570517556058c78c48adff",
+    "revision": "ce62fd6cc08693bb3ae476bb96ef8798",
     "url": "/money-calculator/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/money-calculator/static/js/2.97fba188.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "94e8bc4a12882e299cb1",
-    "url": "/money-calculator/static/js/main.4a0b14a3.chunk.js"
+    "revision": "24db33779e43529e4cf1",
+    "url": "/money-calculator/static/js/main.14a15e28.chunk.js"
   },
   {
     "revision": "83516a5a727618caaf05",
