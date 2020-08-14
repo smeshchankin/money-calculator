@@ -28,6 +28,11 @@ class App extends Component {
     }, this.addStorage);
   }
 
+  deleteTransaction = (key) => {
+    const transactions = this.state.transactions.filter(item => item.id !== key);
+    this.setState({ transactions }, this.addStorage);
+  }
+
   addDescription = event => {
     this.setState({ description: event.target.value });
   }
@@ -51,7 +56,7 @@ class App extends Component {
         <main>
           <div className="container">
               <Total transactions={this.state.transactions} />
-              <History transactions={this.state.transactions} />
+              <History transactions={this.state.transactions} deleteTransaction={this.deleteTransaction} />
               <Operation description={this.state.description} amount={this.state.amount}
                 addTransaction={this.addTransaction} addDescription={this.addDescription} addAmount={this.addAmount} />
           </div>
