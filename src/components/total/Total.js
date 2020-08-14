@@ -2,11 +2,9 @@ import React from 'react';
 
 function Total({ transactions }) {
     const income = transactions
-        .filter(item => item.add)
-        .reduce((sum, item) => sum + +item.amount, 0);
+        .reduce((sum, item) => sum + (item.add ? item.amount : 0), 0);
     const expenses = transactions
-        .filter(item => !item.add)
-        .reduce((sum, item) => sum + +item.amount, 0);
+        .reduce((sum, item) => sum + (item.add ? 0 : item.amount), 0);
     const balance = income - expenses;
 
     return (

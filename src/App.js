@@ -16,7 +16,7 @@ class App extends Component {
     const transaction = {
       id: `mc${(+new Date()).toString(16)}`,
       description: description,
-      amount,
+      amount: parseFloat(amount),
       add
     };
 
