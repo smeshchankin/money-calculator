@@ -6,7 +6,7 @@ import Operation from './components/operation/Operation';
 class App extends Component {
 
   state = {
-    transactions: [],
+    transactions: JSON.parse(localStorage.getItem('money.transactions')) || [],
     description: '',
     amount: ''
   }
@@ -25,7 +25,7 @@ class App extends Component {
       transactions,
       description: '',
       amount: ''
-    });
+    }, this.addStorage);
   }
 
   addDescription = event => {
@@ -34,6 +34,10 @@ class App extends Component {
 
   addAmount = event => {
     this.setState({ amount: event.target.value });
+  }
+
+  addStorage() {
+    localStorage.setItem('money.transactions', JSON.stringify(this.state.transactions));
   }
 
   render() {
