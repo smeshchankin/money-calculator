@@ -1,3 +1,12 @@
+# Money Calculator
+[Open GitHub Pages](http://smeshchankin.github.io/money-calculator)
+
+Money Calculator (React.js)
+
+Project Technologies:
+* React.js
+* gh-pages - library for deploying React.js application on GitHub Pages
+
 # Money Calculator Application
 Inspired by React.js technology
 
